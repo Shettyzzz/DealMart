@@ -1,0 +1,52 @@
+/* Footer Styling */
+.footer {
+  background: #343a40;
+}
+
+.footer-link {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #ffc107;
+}
+
+.social-icons a {
+  font-size: 1.25rem;
+  color: #ffc107;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #fff;
+}
+
+
+.hero {
+  height: 90vh;
+  background-image: url('C:\Users\eashw\Desktop\DealMart\my\public\images\cap.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay for better text visibility */
+  z-index: 1;
+}
+
+.hero h1,
+.hero p,
+.hero a {
+  z-index: 2;
+  position: relative;
+}

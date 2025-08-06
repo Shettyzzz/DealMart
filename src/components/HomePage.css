@@ -1,0 +1,52 @@
+.homepage {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, black, darkgray);
+  height: 90vh;
+  padding: 60px 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  max-width: 600px;
+}
+
+/* About Section */
+.about-section {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.about-section .custom-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-section .custom-list li {
+  padding: 8px 0;
+  font-size: 1.1rem;
+}
+
+/* Section Headings */
+.about-section h2,
+.container h5 {
+  color: #343a40;
+}
+
+/* Buttons */
+.btn-warning {
+  transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #e68a00;
+  color: #fff;
+}
