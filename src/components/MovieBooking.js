@@ -7,7 +7,7 @@ const categories = {
   Disney: [
     {
       id: 'd1',
-      title: 'Frozen',
+      title: 'Fyozen',
       image: '/images/frozen.jpg',
       description: 'A tale of two royal sisters in a magical kingdom with icy powers.'
     },
