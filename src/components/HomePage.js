@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <div className="homepage">
       {/* Hero Section */}
-     <section className="hero d-flex flex-column align-items-center justify-content-center text-center">
+     <section className="hero d-flex flex-column align-items-center justify-content-center text-center" style={{ backgroundImage: "url('/images/cap.jpg')" }}>
   <h1 className="display-3 fw-bold text-white mb-3">Welcome to DealMart 🛒</h1>
   <p className="lead text-white-50 mb-4">Smart shopping starts here. Discover top deals on fashion, gadgets, and more!</p>
   <a href="/products" className="btn btn-lg btn-warning px-4 py-2 fw-semibold">Shop Now</a>
