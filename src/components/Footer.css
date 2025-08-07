@@ -25,7 +25,7 @@
 
 .hero {
   height: 90vh;
-  background-image: url('C:\Users\eashw\Desktop\DealMart\my\public\images\cap.jpg'); /* Replace with your image path */
+  background-image: url('/images/cap.jpg'); /* Use relative path for Vercel compatibility */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
