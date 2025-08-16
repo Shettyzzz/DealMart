@@ -15,7 +15,7 @@ export default function Product({ onAddToCart }) {
   return (
     <div className="container my-5">
       <div className="text-center mb-5">
-        <h2 className="display-5 fw-bold text-primary mb-3">Our Products</h2>
+        <h2 className="display-5 fw-bold text-dark mb-3">Our Products</h2>
         <p className="lead text-muted">Discover amazing deals on quality products</p>
       </div>
 

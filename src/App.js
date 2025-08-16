@@ -75,7 +75,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Product onAddToCart={handleAddToCart} />} />
         <Route path="/cart" element={<CartPage cartItems={cartItems} totalPrice={totalPrice} />} />
-        <Route path="/book-movie" element={<MovieBooking />} />
+        <Route path="/movie-booking" element={<MovieBooking />} />
         <Route path="/login" element={<Navigate to="/" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

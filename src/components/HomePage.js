@@ -6,51 +6,85 @@ export default function HomePage({ onAddToCart }) {
   const featuredProducts = [
     {
       id: 1,
-      name: "Classic Cap",
-      price: 299,
-      image: "/images/cap.jpg",
-      description: "Stylish and comfortable cap for everyday wear"
+      name: 'Stylish Cap',
+      image: '/images/cap.jpg',
+      description: 'Trendy and comfortable cap for all occasions',
+      price: 299
     },
     {
       id: 2,
-      name: "Premium Shirt",
-      price: 499,
-      image: "/images/shirt.jpg",
-      description: "Elegant shirt perfect for any occasion"
+      name: 'Classic Shirt',
+      image: '/images/shirt.jpg',
+      description: 'Elegant shirt perfect for formal and casual wear',
+      price: 499
     },
     {
       id: 3,
-      name: "Comfortable Jeans",
-      price: 899,
-      image: "/images/jeans.jpg",
-      description: "High-quality denim jeans with perfect fit"
+      name: 'Premium Jeans',
+      image: '/images/jeans.jpg',
+      description: 'High-quality jeans with perfect fit and style',
+      price: 899
     }
   ];
 
   return (
     <div className="homepage">
       {/* Hero Section */}
-      <section className="hero d-flex flex-column align-items-center justify-content-center text-center" style={{ backgroundImage: "url('/images/cap.jpg')" }}>
-        <h1 className="display-3 fw-bold text-white mb-3">Welcome to DealMart 🛒</h1>
-        <p className="lead text-white-50 mb-4">Smart shopping starts here. Discover top deals on fashion, gadgets, and more!</p>
-        <Link to="/products" className="btn btn-lg btn-warning px-4 py-2 fw-semibold">Shop Now</Link>
+      <section 
+        className="hero-section text-center text-white py-5"
+        style={{
+          backgroundImage: "url('/images/cap.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="hero-overlay">
+          <div className="container">
+            <h1 className="display-4 fw-bold mb-4">Welcome to DealMart</h1>
+            <p className="lead mb-4">Discover amazing deals on quality products</p>
+            <Link to="/products" className="btn btn-primary btn-lg">
+              Shop Now
+            </Link>
+          </div>
+        </div>
       </section>
 
-      {/* Featured Products Section */}
-      <section className="container my-5">
-        <h2 className="text-center mb-4 fw-bold">Featured Products</h2>
-        <div className="row">
-          {featuredProducts.map((product) => (
-            <div key={product.id} className="col-md-4 mb-4">
-              <div className="card h-100 shadow-sm">
-                <img src={product.image} className="card-img-top" alt={product.name} style={{ height: '200px', objectFit: 'cover' }} />
-                <div className="card-body d-flex flex-column">
-                  <h5 className="card-title">{product.name}</h5>
-                  <p className="card-text text-muted">{product.description}</p>
-                  <div className="mt-auto">
-                    <p className="text-success fw-bold mb-2">₹{product.price}</p>
-                    <button 
-                      className="btn btn-primary w-100"
+      {/* Featured Products */}
+      <section className="featured-products py-5">
+        <div className="container">
+          <div className="text-center mb-5">
+            <h2 className="display-6 fw-bold text-primary mb-3">Featured Products</h2>
+            <p className="lead text-muted">Handpicked products just for you</p>
+          </div>
+          
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+            {featuredProducts.map((product) => (
+              <div key={product.id} className="col">
+                <div className="card h-100 product-card border-0 shadow-sm">
+                  <div className="product-image-container">
+                    <img
+                      src={product.image}
+                      className="card-img-top"
+                      alt={product.name}
+                    />
+                    <div className="product-overlay">
+                      <button
+                        className="btn btn-primary btn-sm"
+                        onClick={() => onAddToCart(product)}
+                      >
+                        Quick Add
+                      </button>
+                    </div>
+                  </div>
+                  <div className="card-body d-flex flex-column">
+                    <h5 className="card-title fw-bold text-center mb-2">{product.name}</h5>
+                    <p className="card-text text-muted text-center flex-grow-1">{product.description}</p>
+                    <div className="text-center mb-3">
+                      <span className="h5 text-success fw-bold">₹{product.price}</span>
+                    </div>
+                    <button
+                      className="btn btn-outline-primary w-100 mt-auto"
                       onClick={() => onAddToCart(product)}
                     >
                       Add to Cart
@@ -58,31 +92,64 @@ export default function HomePage({ onAddToCart }) {
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="container my-5 text-center">
-        <h2 className="mb-3 fw-bold">About DealMart</h2>
-        <p className="text-muted">
-          At DealMart, we believe shopping should be simple, affordable, and exciting. From trendy outfits to must-have gadgets,
-          we bring you hand-picked products at the best prices — all at your fingertips. Whether you're upgrading your wardrobe,
-          accessorizing your style, or finding the perfect gift, DealMart is your go-to destination.
-        </p>
+      {/* Services Section */}
+      <section className="services-section py-5 bg-light">
+        <div className="container">
+          <div className="text-center mb-5">
+            <h2 className="display-6 fw-bold text-primary mb-3">Why Choose DealMart?</h2>
+            <p className="lead text-muted">We provide the best shopping experience</p>
+          </div>
+          
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <div className="col">
+              <div className="service-card text-center p-4">
+                <div className="service-icon mb-3">🚚</div>
+                <h5 className="fw-bold">Fast Delivery</h5>
+                <p className="text-muted">Get your orders delivered quickly</p>
+              </div>
+            </div>
+            <div className="col">
+              <div className="service-card text-center p-4">
+                <div className="service-icon mb-3">💰</div>
+                <h5 className="fw-bold">Best Prices</h5>
+                <p className="text-muted">Competitive prices on all products</p>
+              </div>
+            </div>
+            <div className="col">
+              <div className="service-card text-center p-4">
+                <div className="service-icon mb-3">🛡️</div>
+                <h5 className="fw-bold">Secure Shopping</h5>
+                <p className="text-muted">100% secure payment gateway</p>
+              </div>
+            </div>
+            <div className="col">
+              <div className="service-card text-center p-4">
+                <div className="service-icon mb-3">🎬</div>
+                <h5 className="fw-bold">Movie Booking</h5>
+                <p className="text-muted">Book your favorite movies easily</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="container text-center py-4">
-        <div className="row">
-          <div className="col-md-6">
-            <h5 className="fw-bold">Our Mission</h5>
-            <p>To offer a joyful, affordable shopping experience for everyone, everywhere.</p>
-          </div>
-          <div className="col-md-6">
-            <h5 className="fw-bold">Our Vision</h5>
-            <p>To be India's most trusted and loved online shopping platform.</p>
+      {/* CTA Section */}
+      <section className="cta-section py-5 text-center text-white">
+        <div className="container">
+          <h2 className="display-6 fw-bold mb-4">Ready to Start Shopping?</h2>
+          <p className="lead mb-4">Join thousands of satisfied customers</p>
+          <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+            <Link to="/products" className="btn btn-primary btn-lg">
+              Browse Products
+            </Link>
+            <Link to="/movie-booking" className="btn btn-outline-light btn-lg">
+              Book Movies
+            </Link>
           </div>
         </div>
       </section>
