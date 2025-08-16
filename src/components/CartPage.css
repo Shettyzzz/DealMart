@@ -1,0 +1,129 @@
+.cart-items .card {
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.cart-items .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.empty-cart {
+  padding: 60px 20px;
+}
+
+.empty-cart-icon {
+  font-size: 4rem;
+  color: #6c757d;
+}
+
+.cart-summary {
+  position: sticky;
+  top: 20px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-controls button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dee2e6;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.quantity-controls button:hover {
+  background: #f8f9fa;
+  border-color: #adb5bd;
+}
+
+.quantity-controls .quantity-display {
+  min-width: 40px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.remove-btn {
+  transition: all 0.2s ease;
+}
+
+.remove-btn:hover {
+  transform: scale(1.1);
+}
+
+.product-image {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary .card {
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary .card-header {
+  border-radius: 8px 8px 0 0 !important;
+}
+
+.checkout-btn {
+  transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.continue-shopping-btn {
+  transition: all 0.3s ease;
+}
+
+.continue-shopping-btn:hover {
+  background: #6c757d;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cart-items .card-body {
+    padding: 1rem;
+  }
+  
+  .quantity-controls {
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  .product-image {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  
+  .cart-summary {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .cart-items .row {
+    text-align: center;
+  }
+  
+  .product-image {
+    margin: 0 auto 15px;
+  }
+  
+  .quantity-controls {
+    justify-content: center;
+    margin: 15px 0;
+  }
+}

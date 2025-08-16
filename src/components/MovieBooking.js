@@ -7,7 +7,7 @@ const categories = {
   Disney: [
     {
       id: 'd1',
-      title: 'Fyozen',
+      title: 'Frozen',
       image: '/images/frozen.jpg',
       description: 'A tale of two royal sisters in a magical kingdom with icy powers.'
     },
@@ -113,7 +113,7 @@ export default function MovieBooking() {
         <h2 className="text-center mb-4">🎬 Select a Movie</h2>
 
         <div className="mb-4 text-center">
-          <label htmlFor="categorySelect" className="form-label">Choose Category:</label>
+          <label htmlFor="categorySelect" className="form-label fw-bold">Choose Category:</label>
           <select
             id="categorySelect"
             className="form-select w-auto d-inline-block ms-2"
@@ -129,26 +129,40 @@ export default function MovieBooking() {
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedCategory}
-            className="d-flex flex-wrap justify-content-start gap-4"
+            className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 30 }}
             transition={{ duration: 0.4 }}
           >
             {categories[selectedCategory].map((movie) => (
-              <div key={movie.id} className="card movie-card text-center" style={{ width: '260px' }}>
-                <img
-                  src={movie.image}
-                  className="card-img-top"
-                  alt={movie.title}
-                  style={{ height: '400px', width: '100%', objectFit: 'cover' }}
-                />
-                <div className="card-body">
-                  <h6 className="card-title mb-2">{movie.title}</h6>
-                  <p className="card-text small" style={{ minHeight: '60px' }}>{movie.description}</p>
-                  <button className="btn btn-primary btn-sm" onClick={() => setSelectedMovie(movie)}>
-                    Book Now
-                  </button>
+              <div key={movie.id} className="col">
+                <div className="card movie-card h-100 text-center border-0 shadow-sm">
+                  <div className="movie-image-container">
+                    <img
+                      src={movie.image}
+                      className="card-img-top"
+                      alt={movie.title}
+                    />
+                    <div className="movie-overlay">
+                      <button 
+                        className="btn btn-primary btn-sm"
+                        onClick={() => setSelectedMovie(movie)}
+                      >
+                        Book Now
+                      </button>
+                    </div>
+                  </div>
+                  <div className="card-body d-flex flex-column">
+                    <h6 className="card-title mb-2 fw-bold">{movie.title}</h6>
+                    <p className="card-text small flex-grow-1">{movie.description}</p>
+                    <button 
+                      className="btn btn-primary btn-sm mt-auto" 
+                      onClick={() => setSelectedMovie(movie)}
+                    >
+                      Book Now
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -204,8 +218,10 @@ export default function MovieBooking() {
           ))}
 
           <div className="text-center mt-4">
-            <p>Total Price: ₹{selectedSeats.length * seatPrice}</p>
-            <button className="btn btn-success" onClick={handlePayment}>Pay & Confirm</button>
+            <p className="h5 mb-3">Total Price: ₹{selectedSeats.length * seatPrice}</p>
+            <button className="btn btn-success btn-lg" onClick={handlePayment}>
+              Pay & Confirm
+            </button>
           </div>
         </>
       ) : (

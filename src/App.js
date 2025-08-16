@@ -4,11 +4,11 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Product from './components/Product';
 import HomePage from './components/HomePage';
+import About from './components/About';
 import Footer from './components/Footer';
 import CartPage from './components/CartPage';
 import CartPopup from './components/CartPopup';
 import MovieBooking from './components/MovieBooking';
-import TshirtPage from './components/TShirtPage';
 import Login from './components/Login';
 import MainHomePage from './components/MainHomePage';
 
@@ -72,10 +72,10 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage onAddToCart={handleAddToCart} />} />
+        <Route path="/about" element={<About />} />
         <Route path="/products" element={<Product onAddToCart={handleAddToCart} />} />
         <Route path="/cart" element={<CartPage cartItems={cartItems} totalPrice={totalPrice} />} />
         <Route path="/book-movie" element={<MovieBooking />} />
-        <Route path="/tshirt" element={<TshirtPage />} />
         <Route path="/login" element={<Navigate to="/" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

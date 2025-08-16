@@ -17,15 +17,18 @@ export default function Navbar(props) {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item"><Link className="nav-link active" to="/">Home</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/about">{props.aboutText}</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/tshirt">Premium Sales</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/products">Products</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/book-movie">Book Movie</Link></li>
             <li className="nav-item"><span className="nav-link disabled">DM</span></li>
           </ul>
 
-          <div className="d-flex align-items-center me-3 text-white">
-            <span className="me-2">🛒</span>
-            <span>{props.cartCount} item(s)</span>
-            <span className="ms-3">₹{(props.totalPrice || 0).toFixed(2)}</span>
+          {/* Cart Section */}
+          <div className="d-flex align-items-center me-3">
+            <Link to="/cart" className="d-flex align-items-center text-white text-decoration-none">
+              <span className="me-2 fs-5">🛒</span>
+              <span className="me-2">{props.cartCount} item(s)</span>
+              <span className="badge bg-primary rounded-pill">{props.cartCount}</span>
+            </Link>
           </div>
 
           {/* User Authentication Section */}
@@ -47,11 +50,6 @@ export default function Navbar(props) {
               </Link>
             )}
           </div>
-
-          <form className="d-flex" role="search">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success" type="submit">Search</button>
-          </form>
         </div>
       </div>
     </nav>

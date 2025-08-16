@@ -14,33 +14,53 @@ export default function Product({ onAddToCart }) {
 
   return (
     <div className="container my-5">
-      <h2 className="text-center mb-4">Our Products</h2>
+      <div className="text-center mb-5">
+        <h2 className="display-5 fw-bold text-primary mb-3">Our Products</h2>
+        <p className="lead text-muted">Discover amazing deals on quality products</p>
+      </div>
 
-      <section className="d-flex flex-wrap justify-content-center gap-4">
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
         {products.map((product) => (
-          <figure key={product.id} className="product-card shadow-sm p-3 mb-4 bg-white rounded">
-            <img
-              src={product.image}
-              className="product-image mb-3"
-              alt={product.name}
-            />
-            <figcaption className="text-center">
-              <h5>{product.name}</h5>
-              <p className="text-muted">₹{product.price}</p>
-              <button
-                className="btn btn-sm btn-outline-primary"
-                onClick={() => onAddToCart(product)}
-              >
-                Add to Cart
-              </button>
-            </figcaption>
-          </figure>
+          <div key={product.id} className="col">
+            <div className="card h-100 product-card shadow-sm border-0">
+              <div className="product-image-container">
+                <img
+                  src={product.image}
+                  className="card-img-top product-image"
+                  alt={product.name}
+                />
+                <div className="product-overlay">
+                  <button
+                    className="btn btn-primary btn-sm"
+                    onClick={() => onAddToCart(product)}
+                  >
+                    Quick Add
+                  </button>
+                </div>
+              </div>
+              <div className="card-body d-flex flex-column">
+                <h5 className="card-title fw-bold text-center mb-2">{product.name}</h5>
+                <div className="text-center mb-3">
+                  <span className="h4 text-success fw-bold">₹{product.price}</span>
+                </div>
+                <button
+                  className="btn btn-outline-primary w-100 mt-auto"
+                  onClick={() => onAddToCart(product)}
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
         ))}
-      </section>
+      </div>
 
-      <p className="mt-5 text-center text-muted">
-        Stylish. Comfortable. Handpicked just for you.
-      </p>
+      <div className="text-center mt-5">
+        <p className="text-muted fs-5">
+          <i className="fas fa-star text-warning me-2"></i>
+          Stylish. Comfortable. Handpicked just for you.
+        </p>
+      </div>
     </div>
   );
 }
