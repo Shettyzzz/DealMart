@@ -147,7 +147,7 @@ export default function About() {
             <div className="card border-0 shadow-sm text-center">
               <div className="card-body p-4">
                 <div className="team-avatar mb-3">👨‍💼</div>
-                <h5 className="fw-bold">Rahul Sharma</h5>
+                <h5 className="fw-bold">Eashwar Shetty</h5>
                 <p className="text-muted">Founder & CEO</p>
                 <p className="small text-muted">
                   Passionate about revolutionizing online shopping in India with innovative solutions.
@@ -159,10 +159,10 @@ export default function About() {
             <div className="card border-0 shadow-sm text-center">
               <div className="card-body p-4">
                 <div className="team-avatar mb-3">👩‍💼</div>
-                <h5 className="fw-bold">Priya Patel</h5>
-                <p className="text-muted">Head of Operations</p>
+                <h5 className="fw-bold">Raaji Darur</h5>
+                <p className="text-muted">Head of Operations and sales</p>
                 <p className="small text-muted">
-                  Ensuring smooth operations and exceptional customer service delivery.
+                  Ensuring smooth operations and exceptional customer service delivery with a focus on sales.
                 </p>
               </div>
             </div>

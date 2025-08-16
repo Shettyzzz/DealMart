@@ -61,32 +61,32 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div className="min-h-screen flex items-center justify-center bg-white py-6 px-4 sm:py-8 sm:px-6 lg:py-12 lg:px-8">
+      <div className="w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl space-y-6 sm:space-y-8">
         {/* Header */}
         <div className="text-center">
-          <div className="mx-auto h-16 w-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
-            <FaUser className="h-8 w-8 text-white" />
+          <div className="mx-auto h-12 w-12 sm:h-16 sm:w-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
+            <FaUser className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
           </div>
-          <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
+          <h2 className="mt-4 sm:mt-6 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white">
             {isLogin ? "Welcome back!" : "Create your account"}
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm sm:text-base text-white">
             {isLogin ? "Sign in to your account" : "Join DealMart today"}
           </p>
         </div>
 
         {/* Form */}
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          <div className="space-y-4">
+        <form className="mt-6 sm:mt-8 space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
+          <div className="space-y-3 sm:space-y-4">
             {!isLogin && (
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
                   Full Name
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <FaUser className="h-5 w-5 text-gray-400" />
+                    <FaUser className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                   </div>
                   <input
                     id="name"
@@ -95,7 +95,7 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
                     required={!isLogin}
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="appearance-none relative block w-full pl-10 pr-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm transition-all duration-200 hover:border-gray-400"
+                    className="appearance-none relative block w-full pl-10 pr-3 py-2.5 sm:py-3 border border-white placeholder-white text-white rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 text-sm sm:text-base transition-all duration-200 hover:border-gray-300 bg-transparent"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -103,12 +103,12 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
             )}
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
                 Email address
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaEnvelope className="h-5 w-5 text-gray-400" />
+                  <FaEnvelope className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 </div>
                 <input
                   id="email"
@@ -118,19 +118,19 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
                   required
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="appearance-none relative block w-full pl-10 pr-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm transition-all duration-200 hover:border-gray-400"
+                  className="appearance-none relative block w-full pl-10 pr-3 py-2.5 sm:py-3 border border-white placeholder-white text-white rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 text-sm sm:text-base transition-all duration-200 hover:border-gray-300 bg-transparent"
                   placeholder="Enter your email"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="password" className="block text-sm font-medium text-white mb-2">
                 Password
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaLock className="h-5 w-5 text-gray-400" />
+                  <FaLock className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 </div>
                 <input
                   id="password"
@@ -140,7 +140,7 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
                   required
                   value={formData.password}
                   onChange={handleInputChange}
-                  className="appearance-none relative block w-full pl-10 pr-12 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm transition-all duration-200 hover:border-gray-400"
+                  className="appearance-none relative block w-full pl-10 pr-12 py-2.5 sm:py-3 border border-white placeholder-white text-white rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 text-sm sm:text-base transition-all duration-200 hover:border-gray-300 bg-transparent"
                   placeholder="Enter your password"
                 />
                 <button
@@ -149,9 +149,9 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
-                    <FaEyeSlash className="h-5 w-5 text-gray-400 hover:text-gray-600" />
+                    <FaEyeSlash className="h-4 w-4 sm:h-5 sm:w-5 text-white hover:text-gray-200" />
                   ) : (
-                    <FaEye className="h-5 w-5 text-gray-400 hover:text-gray-600" />
+                    <FaEye className="h-4 w-4 sm:h-5 sm:w-5 text-white hover:text-gray-200" />
                   )}
                 </button>
               </div>
@@ -160,7 +160,7 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
 
           {/* Error Message */}
           {error && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm">
+            <div className="bg-red-50 border border-red-200 text-red-700 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-sm">
               {error}
             </div>
           )}
@@ -170,15 +170,19 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-xl text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
+              className="group relative w-full flex justify-center py-2.5 sm:py-3 px-4 border border-transparent text-sm sm:text-base font-medium rounded-lg sm:rounded-xl text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
             >
               {loading ? (
                 <div className="flex items-center">
-                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                  {isLogin ? "Signing in..." : "Creating account..."}
+                  <div className="animate-spin rounded-full h-4 w-4 sm:h-5 sm:w-5 border-b-2 border-white mr-2"></div>
+                  <span className="text-sm sm:text-base">
+                    {isLogin ? "Signing in..." : "Creating account..."}
+                  </span>
                 </div>
               ) : (
-                isLogin ? "Sign in" : "Create account"
+                <span className="text-sm sm:text-base">
+                  {isLogin ? "Sign in" : "Create account"}
+                </span>
               )}
             </button>
           </div>
@@ -188,7 +192,7 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
             <button
               type="button"
               onClick={toggleMode}
-              className="text-blue-600 hover:text-blue-500 text-sm font-medium transition-colors duration-200"
+              className="text-white hover:text-gray-200 text-sm sm:text-base font-medium transition-colors duration-200"
             >
               {isLogin
                 ? "Don't have an account? Sign up"
@@ -199,13 +203,13 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
 
         {/* Additional Info */}
         <div className="text-center">
-          <p className="text-xs text-gray-500">
+          <p className="text-xs sm:text-sm text-white px-2">
             By continuing, you agree to our{" "}
-            <a href="#" className="text-blue-600 hover:text-blue-500">
+            <a href="#" className="text-blue-300 hover:text-blue-200">
               Terms of Service
             </a>{" "}
             and{" "}
-            <a href="#" className="text-blue-600 hover:text-blue-500">
+            <a href="#" className="text-blue-300 hover:text-blue-200">
               Privacy Policy
             </a>
           </p>
