@@ -17,10 +17,7 @@ export default function Navbar(props) {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item"><Link className="nav-link active" to="/">Home</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/about">{props.aboutText}</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/products/tshirt">T-Shirt</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/products/shoes">Shoes</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/products/jeans">Jeans</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/products/goggles">Goggles</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/tshirt">Premium Sales</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/book-movie">Book Movie</Link></li>
             <li className="nav-item"><span className="nav-link disabled">DM</span></li>
           </ul>
@@ -29,6 +26,26 @@ export default function Navbar(props) {
             <span className="me-2">🛒</span>
             <span>{props.cartCount} item(s)</span>
             <span className="ms-3">₹{(props.totalPrice || 0).toFixed(2)}</span>
+          </div>
+
+          {/* User Authentication Section */}
+          <div className="d-flex align-items-center me-3">
+            {props.user ? (
+              <div className="d-flex align-items-center text-white">
+                <span className="me-2">👤</span>
+                <span className="me-3">Welcome, {props.user.name}</span>
+                <button 
+                  onClick={props.onLogout}
+                  className="btn btn-outline-light btn-sm"
+                >
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <Link to="/login" className="btn btn-outline-light btn-sm">
+                Login
+              </Link>
+            )}
           </div>
 
           <form className="d-flex" role="search">
@@ -46,7 +63,9 @@ Navbar.propTypes = {
   title: PropTypes.string,
   aboutText: PropTypes.string,
   cartCount: PropTypes.number,
-  totalPrice: PropTypes.number
+  totalPrice: PropTypes.number,
+  user: PropTypes.object,
+  onLogout: PropTypes.func
 };
 
 // ✅ Default values
@@ -54,5 +73,7 @@ Navbar.defaultProps = {
   title: "DealMart",
   aboutText: "About",
   cartCount: 0,
-  totalPrice: 0
+  totalPrice: 0,
+  user: null,
+  onLogout: () => {}
 };
