@@ -146,33 +146,26 @@ export default function About() {
           <div className="col-lg-4 col-md-6 mb-4">
             <div className="card border-0 shadow-sm text-center">
               <div className="card-body p-4">
-                <div className="team-avatar mb-3">👨‍💼</div>
+                <div className="team-avatar mb-3">
+                  <img src="/images/me.jpg" alt="Eashwar Shetty" className="ceo-portrait" />
+                </div>
                 <h5 className="fw-bold">Eashwar Shetty</h5>
-                <p className="text-muted">Founder & CEO</p>
+                <p className="text-muted">FOUNDER & CEO</p>
                 <p className="small text-muted">
                   Passionate about revolutionizing online shopping in India with innovative solutions.
                 </p>
               </div>
             </div>
           </div>
+          
           <div className="col-lg-4 col-md-6 mb-4">
             <div className="card border-0 shadow-sm text-center">
               <div className="card-body p-4">
-                <div className="team-avatar mb-3">👩‍💼</div>
-                <h5 className="fw-bold">Raaji Darur</h5>
-                <p className="text-muted">Head of Operations and sales</p>
-                <p className="small text-muted">
-                  Ensuring smooth operations and exceptional customer service delivery with a focus on sales.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card border-0 shadow-sm text-center">
-              <div className="card-body p-4">
-                <div className="team-avatar mb-3">👨‍💻</div>
-                <h5 className="fw-bold">Amit Kumar</h5>
-                <p className="text-muted">Tech Lead</p>
+                <div className="team-avatar mb-3">
+                  <img src="/images/ani.jpg" alt="Eashwar Shetty" className="ceo-portrait" />
+                </div>
+                <h5 className="fw-bold">Anirudh Kulkarni</h5>
+                <p className="text-muted">TECH LEAD</p>       
                 <p className="small text-muted">
                   Building cutting-edge technology solutions for seamless shopping experiences.
                 </p>
