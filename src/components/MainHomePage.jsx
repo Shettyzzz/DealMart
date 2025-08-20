@@ -53,7 +53,7 @@ const MainHomePage = ({ onLoginSuccess }) => {
           <h1 className="text-3xl md:text-4xl font-bold text-black mb-3">
             DealMart
           </h1>
-          <p className="text-gray-200 text-sm md:text-base">
+          <p className="text-black text-sm md:text-base">
             Your ultimate shopping destination
           </p>
         </div>
@@ -111,7 +111,7 @@ const MainHomePage = ({ onLoginSuccess }) => {
             {isLoginMode ? "Login" : "Sign Up"}
           </motion.button>
 
-          <p className="text-sm text-gray-300 mt-4 text-center">
+          <p className="text-sm text-black mt-4 text-center">
             {isLoginMode ? "Don't have an account?" : "Already have an account?"}{" "}
             <button
               type="button"
@@ -156,13 +156,13 @@ const MainHomePage = ({ onLoginSuccess }) => {
           border: 1px solid rgba(255, 255, 255, 0.2);
           border-radius: 10px;
           background: rgba(255, 255, 255, 0.1);
-          color: white;
+          color: black;
           font-size: 15px;
           transition: all 0.3s ease;
         }
 
         .input-group input::placeholder {
-          color: rgba(255, 255, 255, 0.6);
+          color: rgba(0, 0, 0, 0.6);
         }
 
         .input-group input:focus {
@@ -176,7 +176,7 @@ const MainHomePage = ({ onLoginSuccess }) => {
           padding: 1rem;
           margin-top: 1.5rem;
           background: linear-gradient(135deg, #8b5cf6, #ec4899);
-          color: white;
+          color: black;
           border: none;
           border-radius: 12px;
           font-size: 16px;
@@ -192,7 +192,7 @@ const MainHomePage = ({ onLoginSuccess }) => {
         .toggle-btn {
           background: none;
           border: none;
-          color: #ec4899;
+          color: #000000;
           cursor: pointer;
           font-weight: 600;
           text-decoration: underline;
@@ -200,7 +200,7 @@ const MainHomePage = ({ onLoginSuccess }) => {
         }
 
         .toggle-btn:hover {
-          color: #f472b6;
+          color: #000000;
         }
       `}</style>
     </div>
