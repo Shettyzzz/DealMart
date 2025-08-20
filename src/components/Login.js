@@ -61,7 +61,7 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white py-6 px-4 sm:py-8 sm:px-6 lg:py-12 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-black py-6 px-4 sm:py-8 sm:px-6 lg:py-12 lg:px-8">
       <div className="w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl space-y-6 sm:space-y-8">
         {/* Header */}
         <div className="text-center">
@@ -77,11 +77,17 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
         </div>
 
         {/* Form */}
-        <form className="mt-6 sm:mt-8 space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
+        <form
+          className="mt-6 sm:mt-8 space-y-4 sm:space-y-6"
+          onSubmit={handleSubmit}
+        >
           <div className="space-y-3 sm:space-y-4">
             {!isLogin && (
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-white mb-2"
+                >
                   Full Name
                 </label>
                 <div className="relative">
@@ -103,7 +109,10 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
             )}
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-white mb-2"
+              >
                 Email address
               </label>
               <div className="relative">
@@ -125,7 +134,10 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-white mb-2">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-white mb-2"
+              >
                 Password
               </label>
               <div className="relative">

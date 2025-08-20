@@ -13,14 +13,39 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://eashwardarur5:T1xVBFfZjFbGgEzW@cluster0.ljb9wea.mongodb.net/dealmart', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// MongoDB Connection - Try local MongoDB first, then Atlas
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/dealmart';
+
+// Function to connect to MongoDB
+const connectDB = async () => {
+  try {
+    await mongoose.connect(mongoURI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('Connected to local MongoDB');
+  } catch (err) {
+    console.log('Local MongoDB connection failed, trying Atlas...');
+    try {
+      await mongoose.connect('mongodb+srv://eashwardarur5:T1xVBFfZjFbGgEzW@cluster0.ljb9wea.mongodb.net/dealmart?retryWrites=true&w=majority', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      });
+      console.log('Connected to MongoDB Atlas');
+    } catch (atlasErr) {
+      console.log('MongoDB Atlas connection failed. Starting server without database...');
+      console.log('Note: Database features will not work. Please check your MongoDB connection.');
+    }
+  }
+};
+
+// Connect to database
+connectDB();
 
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.on('error', (err) => {
+  console.log('MongoDB connection error:', err.message);
+});
 db.once('open', () => {
   console.log('Connected to MongoDB');
 });
